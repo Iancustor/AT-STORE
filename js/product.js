@@ -14,7 +14,7 @@ async function fetchData(API) {
       return product.id == productId;
     });
     renderProduct(product);
-    console.log(product);
+    // console.log(product);
   } catch (error) {
     console.log(error);
   }
@@ -70,7 +70,7 @@ fetchData(API);
 const endPoint = "products.json";
 const catId = query.get("id");
 const SimilarId = query.get("cat_id");
-console.log(SimilarId);
+// console.log(SimilarId);
 
 async function getProductsByCategory(endPoint) {
   try {
@@ -143,7 +143,7 @@ function renderProducts(products) {
           >
           <button
             data-id="${product.id}"
-            class="text-white bg-blue-700 hover:bg-blue-800 sm:font-normal sm:p-1 lg:font-medium rounded-lg text-sm lg:px-5 lg:py-2.5 px-1.5 py-[.3rem] text-center"
+            class="add-to-cart text-white bg-blue-700 hover:bg-blue-800 sm:font-normal sm:p-1 lg:font-medium rounded-lg text-sm lg:px-5 lg:py-2.5 px-1.5 py-[.3rem] text-center"
           >
             Add to cart
           </button>

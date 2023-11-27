@@ -1,6 +1,6 @@
 //CATEGORIES
 const categoryContainer = document.querySelector("#productsContainer");
-console.log(categoryContainer);
+// console.log(categoryContainer);
 
 const catAPI = "categories.json";
 
@@ -38,7 +38,7 @@ fetchCategories(catAPI);
 
 // recommended
 const recommendedProducts = document.querySelector("#recommendedContainer");
-console.log(recommendedProducts);
+// console.log(recommendedProducts);
 recommendedProducts.innerHTML = ``;
 
 const API = "data.json";
@@ -48,7 +48,7 @@ async function fetchData(API) {
     const data = await response.json();
     const { products } = data;
     const recommendedPdts = products.splice(2, 4);
-    console.log(recommendedPdts);
+    // console.log(recommendedPdts);
     renderProducts(recommendedPdts);
   } catch (error) {
     console.log(error);
@@ -95,7 +95,7 @@ function renderProducts(recommendedPdts) {
           >
           <button
             data-id="${product.id}"
-            class="text-white bg-blue-700 hover:bg-blue-800 sm:font-normal sm:p-1 lg:font-medium rounded-lg text-sm lg:px-5 lg:py-2.5 px-1.5 py-[.3rem] text-center"
+            class="add-to-cart text-white bg-blue-700 hover:bg-blue-800 sm:font-normal sm:p-1 lg:font-medium rounded-lg text-sm lg:px-5 lg:py-2.5 px-1.5 py-[.3rem] text-center"
           >
             Add to cart
           </button>
