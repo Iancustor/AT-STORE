@@ -1,66 +1,27 @@
-//CATEGORIES
-const categoryContainer = document.querySelector("#productsContainer");
-console.log(categoryContainer);
+//Data-Fetching
+const productsContainer = document.querySelector("#productsContainer");
+console.log(productsContainer);
 
-const catAPI = "categories.json";
-
-async function fetchCategories(catAPI) {
-  try {
-    const response = await fetch(catAPI);
-    const categories = await response.json();
-
-    //Call a function to render the data
-    renderCategories(categories);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function renderCategories(categories) {
-  categoryContainer.innerHTML = "";
-  categories.forEach((category) => {
-    const categoryHtml = `
-  <a href="/category.html?id=${category.id}" class="category">
-  <div class="catImg-container">
-    <img
-      src="${category.image}"
-      alt="${category.title}"
-    />
-  </div>
-  <p class="categoryName text-slate-900 font-extrabold text-center">${category.title}</p>
-</a>
-  `;
-    categoryContainer.insertAdjacentHTML("afterbegin", categoryHtml);
-  });
-}
-
-fetchCategories(catAPI);
-
-// recommended
-const recommendedProducts = document.querySelector("#recommendedContainer");
-console.log(recommendedProducts);
-recommendedProducts.innerHTML = ``;
-
+productsContainer.innerHTML = ``;
 const API = "data.json";
 async function fetchData(API) {
   try {
     const response = await fetch(API);
     const data = await response.json();
     const { products } = data;
-    const recommendedPdts = products.splice(2, 4);
-    console.log(recommendedPdts);
-    renderProducts(recommendedPdts);
+    console.log(products);
+    renderProducts(products);
   } catch (error) {
     console.log(error);
   }
 }
 fetchData(API);
-function renderProducts(recommendedPdts) {
-  recommendedPdts.forEach((product) => {
+function renderProducts(products) {
+  products.forEach((product) => {
     const productHTML = `
     <div class="product grid">
     <div
-      class="bg-slate-900 w-[11rem] h-[20rem] lg:w-[18rem] lg:h-[23rem] rounded-2xl "
+      class="bg-slate-900 w-[11rem] h-[20rem] lg:w-[18rem] lg:h-[23rem] rounded-2xl grid"
     >
       <a
         href="/product.html?id=${product.id}&&category=${product.category}&&cat_id=${product.cat_id}"
@@ -104,6 +65,35 @@ function renderProducts(recommendedPdts) {
     </div>
   </div>
   `;
-    recommendedProducts.insertAdjacentHTML("beforeend", productHTML);
+    productsContainer.insertAdjacentHTML("beforeend", productHTML);
   });
+
+  // ADD TO CART
+  // const cartBtns = document.querySelectorAll(".add-to-cart");
+  // console.log(cartBtns);
+
+  // stored cart item
+  const storedCart = JSON.parse(localStorage.getItem("cart"));
+  let cart = storedCart ? storedCart : [];
+  // console.log(storedCart);
+  cartContainer.textContent = cart.length;
+  //For Each & eventlistener on cartbtn
+  // cartBtns.forEach((btn) => {
+  //   btn.addEventListener("click", (event) => {
+  //     const productId = event.target.dataset.id;
+  //     // console.log(productId);
+
+  //     // finding cart product
+  //     const cartProduct = products.find((product) => {
+  //       return product.id == productId;
+  //     });
+  //     cart.push(cartProduct);
+  //     cartContainer.textContent = cart.length;
+  //     console.log(cart);
+
+  //     // local storage with Cart
+  //     localStorage.setItem("cart", JSON.stringify(cart));
+  //     console.log(JSON.stringify(cart));
+  //   });
+  // });
 }
