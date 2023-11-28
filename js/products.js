@@ -83,7 +83,7 @@ function renderProducts(products) {
     btn.addEventListener("click", (event) => {
       const productId = event.target.dataset.id;
       // console.log(productId);
-
+      showNotification(`product added to cart`);
       // finding cart product
       const cartProduct = products.find((product) => {
         return product.id == productId;
@@ -97,4 +97,14 @@ function renderProducts(products) {
       console.log(JSON.stringify(cart));
     });
   });
+}
+//MESSAGE
+const note = document.querySelector(".note");
+// console.log(note);
+function showNotification(message) {
+  note.textContent = message;
+  note.style.left = "70px";
+  setTimeout(() => {
+    note.style.left = "-600px";
+  }, 3000);
 }
