@@ -1,6 +1,6 @@
 //CATEGORIES
-const categoryContainer = document.querySelector("#productsContainer");
-// console.log(categoryContainer);
+const categoryContainer = document.querySelector(".catiesContainer");
+console.log(categoryContainer);
 
 const catAPI = "categories.json";
 
@@ -20,14 +20,13 @@ function renderCategories(categories) {
   categoryContainer.innerHTML = "";
   categories.forEach((category) => {
     const categoryHtml = `
-  <a href="/category.html?id=${category.id}" class="category">
-  <div class="catImg-container">
-    <img
-      src="${category.image}"
-      alt="${category.title}"
-    />
-  </div>
-  <p class="categoryName text-slate-900 font-extrabold text-center">${category.title}</p>
+<a href="/category.html?id=${category.id}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-900 dark:bg-gray-900 dark:hover:bg-black">
+<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="${category.image}"
+alt="${category.title}">
+<div class="flex flex-col justify-between p-4 leading-normal">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${category.title}</h5>
+    <p class="mb-3 font-normal text-gray-700  dark:text-gray-400">${category.description}</p>
+</div>
 </a>
   `;
     categoryContainer.insertAdjacentHTML("afterbegin", categoryHtml);
