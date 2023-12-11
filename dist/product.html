@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ian Sebugenyi - Web Developer in Uganda | Contact: 0773443367 | At Stock - Quality Electronics Store"
+      content="Ian Sebugenyi - Web Developer in Uganda | Contact: 0773443367 | Custor Electronics - Quality Electronics Store"
     />
     <meta
       name="keywords"
@@ -17,7 +17,7 @@
     <meta name="publisher" content="Custor Dev" />
     <meta
       property="og:title"
-      content="Custor Electronics | Quality Products - Ian Sebugenyi, Web Developer in Uganda | Contact: 0773443367"
+      content="Custor Electronics | Quality Electronics - Ian Sebugenyi, Web Developer in Uganda | Contact: 0773443367"
     />
     <meta
       property="og:description"
@@ -43,12 +43,16 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.scss" />
-    <title>Cart Items</title>
+    
+    <title>Custor Electronics Ug</title>
+    <script type="module" crossorigin src="/assets/product-0d16f674.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/products-f511eac6.js">
+    <link rel="stylesheet" href="/assets/products-77a1ffd5.css">
   </head>
   <body>
     <header>
       <!-- Mega Menu Navigation -->
+
       <nav
         class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-950"
       >
@@ -58,7 +62,7 @@
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
             <span
               class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-              >At Store</span
+              >At Stock</span
             >
           </a>
           <button
@@ -149,7 +153,7 @@
             <a
               href="#"
               class="p-8 bg-local bg-black bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
-              style="background-image: url(/images/Iphone\ 3.jpg)"
+              style="background-image: url('/images/Iphone\ 3.jpg')"
             >
               <p
                 class="max-w-xl mb-5 font-extrabold leading-tight tracking-tight text-white"
@@ -182,36 +186,76 @@
         </div>
       </nav>
     </header>
-    <!-- Cart Section -->
+    <!-- Product Section -->
     <section
-      id="Cart-Section"
+      id="productContainer"
       class="flex flex-col align-center justify-center gap-[1rem]"
     >
-
-      <div id="cartProductsContainer" class="mt-[.1rem] ">
-        <div class="note">message</div>
-        <div
-          id="LinkToProducts"
-          class="flex p-[.4rem] text-xl mt-[.5rem] align-middle justify-between py-[.5rem] px-[3.5rem] gap-[3rem]"
+      <div
+        id="LinkToProducts"
+        class="flex p-[.4rem] mt-[.5rem] align-middle justify-between lg:py-[.5rem] px-[3.5rem] gap-[3rem]"
+      >
+        <p
+          id="productsDescription"
+          class="lg:border-r-slate-900 text-slate-900 font-extrabold text-[1.5rem]"
         >
-          <p
-            id="productsDescription"
-            class="lg:border-r-slate-900 text-slate-900 font-extrabold text-[1.5rem]"
+          Product
+        </p>
+        <a
+          href="/index.html "
+          class="hover:underline hover:text-blue-600 dark:hover:text-blue-500 text-slate-50 inline-flex items-center px-[3rem] py-[.5rem] text-xs text-center border border-slate-900 rounded-lg hover:bg-slate-900 bg-slate-900 hover:border-black font-extrabold"
+          >Back Home</a
+        >
+      </div>
+      <div id="similarProductsContainer" class="mt-[.1rem] grid gap-[2rem]">
+        <div
+          id="singleProductContainer"
+          class="grid place-content-center"
+        ></div>
+        <div id="similarContainer" class="flex flex-col gap-[2rem]">
+          <h2
+            id="recommended"
+            class="lg:border-r-slate-900 bg-slate-900 py-[.3rem] text-slate-50 font-extrabold text-[1.5rem] px-[3rem]"
           >
-            Cart Items <span class="allCartItems">0</span>
-          </p>
-          <a
-            href="/index.html "
-            class="hover:underline hover:text-blue-600 dark:hover:text-blue-500 text-slate-50 inline-flex items-center px-[3rem] py-[.5rem] text-xs text-center border border-slate-900 rounded-lg hover:bg-slate-900 bg-slate-900 hover:border-black font-extrabold"
-            >Back Home</a
-          >
+            Similar Products
+          </h2>
+          <div
+            id="SimilarProductsContainer"
+            class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-3 lg:gap-10"
+          ></div>
         </div>
-     <div id="cartContainer">
-      
-     </div>
+      </div>
     </section>
+    <footer
+      class="mt-3 text-center z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600"
+    >
+      <span
+        class="text-center text-sm text-gray-50 sm:text-center dark:text-gray-50"
+        >© 2023 <a href="#" class="hover:underline">At Stock</a>. All Rights
+        Reserved.
+      </span>
+      <ul
+        class="flex align-center justify-center flex-wrap items-center mt-3 text-sm font-medium text-gray-50 dark:text-gray-50 sm:mt-0"
+      >
+        <li>
+          <a href="#" class="hover:underline me-4 md:me-6">About</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+        </li>
+      </ul>
 
-    <script type="module" src="products.js"></script>
-    <script type="module" src="cart.js"></script>
+      <a
+        href="https://custor-potfolio.vercel.app/ "
+        class="text-slate-50 font-bold hover:underline me-4 md:me-6"
+      >
+        @custor Dev</a
+      >
+    </footer>
+    
+    
   </body>
 </html>
